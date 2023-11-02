@@ -79,6 +79,9 @@ check_for_win(current_board,o)
 
 
 
+place_mark(current_board,x,0,0)
+place_mark(current_board,o,1,0)
+
 
 """
 currently everything works for a 3*3 board with two players
