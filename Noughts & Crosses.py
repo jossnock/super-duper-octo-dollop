@@ -87,3 +87,4 @@ place_mark(current_board,o,1,0)
 currently everything works for a 3*3 board with two players
 win_condition_diagonals won't find all diagonals in a board that isn't square (e.g. a 4*3 board)
 """
+print("Hello")
