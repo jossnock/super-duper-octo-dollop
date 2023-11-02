@@ -1,6 +1,6 @@
-current_board=[[" "," "," "],
-               [" "," "," "],
-               [" "," "," "]]
+current_board=[["_","_","_"],
+               ["_","_","_"],
+               ["_","_","_"]]
 marks=['x','o']
 x='x'
 X='x'
@@ -19,7 +19,7 @@ def print_board(board):
 
 
 def place_mark(board,mark,y_coord,x_coord):
-    if board[y_coord][x_coord]==' ': #checks if the position is empty
+    if board[y_coord][x_coord]=='_': #checks if the position is empty
         board[y_coord][x_coord]=mark #places mark if empty
     else:
         print("That position is already filled, try again",mark,"player:") #try again if full
@@ -94,7 +94,7 @@ def play_game(board, mark):
         if mark=="x":
             mark="o"
         else:
-            mark=="x"
+            mark="x"
         
 play_game(current_board,"x")
             
