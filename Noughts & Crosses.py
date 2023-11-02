@@ -1,4 +1,4 @@
-currnet_board=[[" "," "," "],
+current_board=[[" "," "," "],
                [" "," "," "],
                [" "," "," "]]
 marks=['x','o']
@@ -73,9 +73,9 @@ def check_for_win(board,mark):
     win_condition_diagonals(board,mark)
 
 
-print_board(currnet_board)
-check_for_win(currnet_board,x)
-check_for_win(currnet_board,o)
+print_board(current_board)
+check_for_win(current_board,x)
+check_for_win(current_board,o)
 
 
 
