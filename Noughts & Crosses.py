@@ -6,7 +6,10 @@ x='x'
 X='x'
 o='o'
 O='o'
-
+win=False
+markx=0
+marky=0
+count=0
 
 def print_board(board):
     for row in range(len(board)): #only repeats for the number of rows
@@ -31,6 +34,7 @@ def check_for_win(board,mark):
                     marks_in_line+=1 #tallys the total number of marks in row
             if marks_in_line==len(board[row]): #checks if the row is entirely filled with the mark
                 print(mark, 'player wins!')
+                win=True
             else: 
                 continue
 
@@ -42,6 +46,7 @@ def check_for_win(board,mark):
                         marks_in_line+=1
                 if marks_in_line==len(board):
                     print(mark, 'player wins!')
+                    win=True
                 else:
                     continue
         
@@ -56,6 +61,7 @@ def check_for_win(board,mark):
             column+=1
         if marks_in_line==len(board):
             print(mark, 'player wins!')
+            win=True
 
         column=0 #same as previous block, but increments row by 1 and decrements column by 1 (starting from the other end) each loop
         marks_in_line=0
@@ -67,22 +73,31 @@ def check_for_win(board,mark):
             column+=1
         if marks_in_line==len(board):
             print(mark, 'player wins!')
+            win=True
 
     win_condition_rows(board,mark)
     win_condition_columns(board,mark)
     win_condition_diagonals(board,mark)
 
 
-print_board(current_board)
-check_for_win(current_board,x)
-check_for_win(current_board,o)
+def play_game(board, mark):
+    print_board(board)
+    count=0
+    while win==False or count==9:
+        markx=int(input("What x value is the mark being placed at? "))
+        marky=int(input("What y value is the mark being placed at? "))
+        place_mark(board, mark, marky, markx)
+        print_board(board)
+        check_for_win(board, mark)
 
-
-
-place_mark(current_board,x,0,0)
-place_mark(current_board,o,1,0)
-
-
+        count+=1
+        if mark=="x":
+            mark="o"
+        else:
+            mark=="x"
+        
+play_game(current_board,"x")
+            
 """
 currently everything works for a 3*3 board with two players
 win_condition_diagonals won't find all diagonals in a board that isn't square (e.g. a 4*3 board)
