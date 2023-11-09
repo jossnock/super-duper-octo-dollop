@@ -83,6 +83,7 @@ def check_for_win(board,mark):
 def play_game(board, mark):
     count=0
     while win==False or count==9:
+        print("")
         print(f"{mark}'s turn:")
         print_board(board)
         markx=int(input("What x value is the mark being placed at? "))
