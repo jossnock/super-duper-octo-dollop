@@ -81,13 +81,13 @@ def check_for_win(board,mark):
 
 
 def play_game(board, mark):
-    print_board(board)
     count=0
     while win==False or count==9:
+        print(f"{mark}'s turn:")
+        print_board(board)
         markx=int(input("What x value is the mark being placed at? "))
         marky=int(input("What y value is the mark being placed at? "))
         place_mark(board, mark, marky, markx)
-        print_board(board)
         check_for_win(board, mark)
 
         count+=1
