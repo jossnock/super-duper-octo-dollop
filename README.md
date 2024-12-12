@@ -1,2 +1,2 @@
-# super-duper-octo-dollop
-Noughts &amp; Crosses game
+# noughts_and_crosses
+Noughts & Crosses game for n-by-m sized boards
